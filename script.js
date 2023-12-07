@@ -5,7 +5,7 @@ const spike = document.getElementById("spike");
 function hop() {
   if (rex.classList != "jump") {
     rex.classList.add("jump");
-
+s
     setTimeout(function () {
       rex.classList.remove("jump");
     }, 500);
@@ -30,4 +30,9 @@ function checkOverlap () {
   }
 }
 
-app.addEventListener("click", hop);
+document.addEventListener("keydown", hop);
+
+document.querySelector("form.userform").addEventListener("submit", function(event) {
+  event.preventDefault();
+  document.getElementById("target").innerText = document.getElementById("name").value;
+});
