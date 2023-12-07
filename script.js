@@ -5,11 +5,20 @@ const spike = document.getElementById("spike");
 function hop() {
   if (rex.classList != "jump") {
     rex.classList.add("jump");
-s
+
     setTimeout(function () {
       rex.classList.remove("jump");
     }, 500);
   }
+}
+function startGame() {
+  if (spike.classList != "slide") {
+    spike.classList.add("slide");
+  } 
+  else if (spike.classList == "slide"){
+    spike.classList.remove("slide");
+  }
+
 }
 
 let isAlive = setInterval(checkOverlap, 10);
@@ -26,13 +35,16 @@ function checkOverlap () {
   // detect collision
   if (cactusLeft < 45 && cactusLeft > 0 && dinoTop >= 140) {
     // collision
-    alert("Game Over!");
+    spike.classList.remove("slide");
+    document.getElementById("gameOver").innerText = "GAME OVER!!!";
+    //alert("Game Over!");
   }
 }
 
 document.addEventListener("keydown", hop);
+app.addEventListener("click", startGame);
 
 document.querySelector("form.userform").addEventListener("submit", function(event) {
   event.preventDefault();
-  document.getElementById("target").innerText = document.getElementById("name").value;
+  document.getElementById("playerName").innerText = document.getElementById("name").value;
 });

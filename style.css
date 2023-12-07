@@ -60,10 +60,13 @@
   background-image: url("images/cactus.png");
   background-size: 20px 40px;
 
-  animation: block 1.5s infinite linear;
 }
 
-@keyframes block {
+.slide {
+  animation: slide 1.5s infinite linear;
+}
+
+@keyframes slide {
   0% {
     left: 580px;
   }
