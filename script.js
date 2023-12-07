@@ -20,6 +20,7 @@ function startGame() {
   }
 
 }
+//  another test comment.
 
 let isAlive = setInterval(checkOverlap, 10);
   
